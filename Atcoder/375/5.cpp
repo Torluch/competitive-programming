@@ -1,10 +1,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
-int main(){
-    
-  ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
-
+int main(){ 
+        ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     int n; cin >> n; 
     vector<int> a(n), b(n); 
 
@@ -29,8 +26,6 @@ int main(){
         int inA = (a[i] != 1) + f(i + 1, sumA + b[i], sumB); 
         int inB = (a[i] != 2) + f(i + 1, sumA, sumB + b[i]); 
         int inC = (a[i] != 3) + f(i + 1, sumA, sumB); 
-
-
 
         return memo[i][sumA][sumB] = min(inA, min(inB, inC)); 
 
