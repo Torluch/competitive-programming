@@ -47,3 +47,4 @@ int32_t main(){
     int n; cin >> n; 
     if(n == 0) cout <<  0<< endl; 
     else cout << f(base, n).v[0][1] << endl;
+}
