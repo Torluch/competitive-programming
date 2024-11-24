@@ -16,6 +16,7 @@ int main(){
         v.push_back({start + 1, end + 1});
         f(n - 1, intermedium, end, start);  
     }; 
+    
     f(n, 0, 2, 1); 
 
     cout << v.size() << endl; 
