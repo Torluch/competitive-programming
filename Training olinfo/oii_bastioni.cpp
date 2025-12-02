@@ -14,15 +14,15 @@ int32_t arrampicate(int32_t N, string S){
             if(verso != 0) ans = 1 + f(ind + 1, 0); 
             else ans = max(f(ind + 1, 1), f(ind + 1, 2)); 
         } else {
-            int verso_sx = (verso != 1 && (S[ind] == '<' || S[ind] == '=')) ? f(ind + 1, 2): 1e9;
-            int verso_dx = (verso != 2 && (S[ind] == '>' || S[ind] == '=') ) ? f(ind + 1, 1): 1e9; 
+            
+            int verso_sx = (verso != 1 && S[ind] == '<') ? f(ind + 1, 2): 1e9;
+            int verso_dx = (verso != 2 && S[ind] == '>') ? f(ind + 1, 1): 1e9; 
             int continua = (S[ind] == '=') ? f(ind + 1, verso) : 1e9; 
             int scendi = 1 + f(ind + 1, 0);
+
             ans = min(verso_sx, min(verso_dx, scendi));
             ans = min(ans, continua); 
         }
-
-        if(ans <= 0) for(int i = 0; i < 1; i--) cout << "ciao" << endl; 
 
         return ans; 
     };
