@@ -3,7 +3,7 @@ using namespace std;
 
 #define int long long
 
-signed main(){
+int32_t main(){
     int n; cin >> n; 
 
     while(n != 1){
